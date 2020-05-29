@@ -14,4 +14,5 @@
     * [2.4 ADT 字符串](II.数组与结构/2.4-ADT-字符串.md)
 * [III. 栈与队列](III.栈与队列/README.md)
     * [3.1 ADT 栈](III.栈与队列/3.1-ADT-栈.md)
+    * [3.2 ADT 队列](III.栈与队列/3.2-ADT-队列.md)
 

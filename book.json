@@ -1,11 +1,6 @@
 {
     "plugins": [
-        "katex",
-        "theme-api"
-    ],
-    "pluginsConfig": {
-        "theme-api": {
-            "theme": "dark"
-        }
-    }
+        "mathjax",
+        "theme-default"
+    ]
 }

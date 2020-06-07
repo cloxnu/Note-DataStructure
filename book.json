@@ -1,17 +1,21 @@
 {
+    "title": "数据结构",
+    "author": "cloxnu",
+    "description": "Note about data structure, powered by GitBook. https://ds.an.dog",
     "plugins": [
         "katex",
         "theme-default",
-        "favicon"
+        "favicon-absolute"
     ],
     "pluginsConfig": {
-        "favicon": {
-            "shortcut": "res/favicon.ico",
-            "bookmark": "res/favicon.ico",
-            "appleTouch": "res/travelDog57.png",
+        "favicon-absolute": {
+            "favicon": "/res/favicon.ico",
+            "bookmark": "/res/favicon.ico",
+            "appleTouch": "/res/travelDog57.png",
+            "appleTouchIconPrecomposed152": "/res/travelDog152.png",
             "appleTouchMore": {
-                "120x120": "res/travelDog120.png",
-                "180x180": "res/travelDog180.png"
+                "120x120": "/res/travelDog120.png",
+                "180x180": "/res/travelDog180.png"
             }
         }
     }

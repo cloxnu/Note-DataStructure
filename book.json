@@ -1,6 +1,18 @@
 {
     "plugins": [
         "katex",
-        "theme-default"
-    ]
+        "theme-default",
+        "favicon"
+    ],
+    "pluginsConfig": {
+        "favicon": {
+            "shortcut": "res/favicon.ico",
+            "bookmark": "res/favicon.ico",
+            "appleTouch": "res/travelDog57.png",
+            "appleTouchMore": {
+                "120x120": "res/travelDog120.png",
+                "180x180": "res/travelDog180.png"
+            }
+        }
+    }
 }

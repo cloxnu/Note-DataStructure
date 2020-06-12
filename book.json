@@ -5,7 +5,8 @@
     "plugins": [
         "katex",
         "theme-default",
-        "favicon-absolute"
+        "favicon-absolute",
+        "expandable-chapters-small"
     ],
     "pluginsConfig": {
         "favicon-absolute": {

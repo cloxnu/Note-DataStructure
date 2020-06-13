@@ -27,4 +27,5 @@
     * [4.7 双向链表](content/IV.链表/4.7-双向链表.md)
 * [V. 树](content/V.树/README.md)
     * [5.1 概述](content/V.树/5.1-概述.md)
+    * [5.2 二叉树](content/V.树/5.2-二叉树.md)
 

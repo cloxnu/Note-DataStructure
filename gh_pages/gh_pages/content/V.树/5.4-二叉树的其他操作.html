@@ -66,6 +66,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="5.5-线索二叉树.html" />
+    
     
     <link rel="prev" href="5.3-二叉树的遍历.html" />
     
@@ -528,6 +530,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.5" data-path="5.5-线索二叉树.html">
+            
+                <a href="5.5-线索二叉树.html">
+            
+                    
+                    5.5 线索二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -666,7 +681,7 @@ x_1 \land \lnot x_2 \lor \lnot x_1 \land \lnot x_3 \lor \lnot x_3
                 node-&gt;value = <span class="hljs-literal">true</span>;
                 <span class="hljs-keyword">break</span>;
             <span class="hljs-keyword">case</span> FALSE:
-                node-&gt;value = FALSE;
+                node-&gt;value = <span class="hljs-literal">false</span>;
         }
     }
 }
@@ -698,10 +713,14 @@ x_1 \land \lnot x_2 \lor \lnot x_1 \land \lnot x_3 \lor \lnot x_3
 
             
                 
-                <a href="5.3-二叉树的遍历.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 5.3 二叉树的遍历">
+                <a href="5.3-二叉树的遍历.html" class="navigation navigation-prev " aria-label="Previous page: 5.3 二叉树的遍历">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="5.5-线索二叉树.html" class="navigation navigation-next " aria-label="Next page: 5.5 线索二叉树">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -710,7 +729,7 @@ x_1 \land \lnot x_2 \lor \lnot x_1 \land \lnot x_3 \lor \lnot x_3
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5.4 二叉树的其他操作","level":"1.7.4","depth":2,"previous":{"title":"5.3 二叉树的遍历","level":"1.7.3","depth":2,"path":"content/V.树/5.3-二叉树的遍历.md","ref":"content/V.树/5.3-二叉树的遍历.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","livereload"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/travelDog152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/travelDog57.png","appleTouchMore":{"120x120":"/res/travelDog120.png","180x180":"/res/travelDog180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/V.树/5.4-二叉树的其他操作.md","mtime":"2020-06-14T16:54:33.299Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-14T16:54:44.396Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5.4 二叉树的其他操作","level":"1.7.4","depth":2,"next":{"title":"5.5 线索二叉树","level":"1.7.5","depth":2,"path":"content/V.树/5.5-线索二叉树.md","ref":"content/V.树/5.5-线索二叉树.md","articles":[]},"previous":{"title":"5.3 二叉树的遍历","level":"1.7.3","depth":2,"path":"content/V.树/5.3-二叉树的遍历.md","ref":"content/V.树/5.3-二叉树的遍历.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","livereload"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/travelDog152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/travelDog57.png","appleTouchMore":{"120x120":"/res/travelDog120.png","180x180":"/res/travelDog180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/V.树/5.4-二叉树的其他操作.md","mtime":"2020-06-14T16:55:28.912Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-15T15:22:19.223Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

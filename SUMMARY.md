@@ -37,4 +37,6 @@
     * [5.9 森林](content/V.树/5.9-森林.md)
     * [5.10 集合表示](content/V.树/5.10-集合表示.md)
     * [5.11 二叉树计数](content/V.树/5.11-二叉树计数.md)
+* [VI. 图](content/VI.图/README.md)
+    * [6.1 概述](content/VI.图/6.1-概述.md)
 

@@ -39,4 +39,6 @@
     * [5.11 二叉树计数](content/V.树/5.11-二叉树计数.md)
 * [VI. 图](content/VI.图/README.md)
     * [6.1 概述](content/VI.图/6.1-概述.md)
+    * [6.2 图的存储表示](content/VI.图/6.2-图的存储表示.md)
+    * [6.3 图的基本操作](content/VI.图/6.3-图的基本操作.md)
 

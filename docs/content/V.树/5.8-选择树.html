@@ -1,0 +1,853 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.8 选择树 · 数据结构</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="cloxnu">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="5.9-森林.html" />
+    
+    
+    <link rel="prev" href="5.7-二叉查找树.html" />
+    
+
+    
+        <link rel="shortcut icon" href="/res/favicon.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="/res/favicon.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/res/travelDog152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../序.html">
+            
+                <a href="../序.html">
+            
+                    
+                    序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../I.基本概念/">
+            
+                <a href="../I.基本概念/">
+            
+                    
+                    I. 基本概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../I.基本概念/1.1-算法.html">
+            
+                <a href="../I.基本概念/1.1-算法.html">
+            
+                    
+                    1.1 算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../I.基本概念/1.2-递归算法.html">
+            
+                <a href="../I.基本概念/1.2-递归算法.html">
+            
+                    
+                    1.2 递归算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../I.基本概念/1.3-数据抽象.html">
+            
+                <a href="../I.基本概念/1.3-数据抽象.html">
+            
+                    
+                    1.3 数据抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../I.基本概念/1.4-空间复杂度和时间复杂度.html">
+            
+                <a href="../I.基本概念/1.4-空间复杂度和时间复杂度.html">
+            
+                    
+                    1.4 空间复杂度和时间复杂度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../II.数组与结构/">
+            
+                <a href="../II.数组与结构/">
+            
+                    
+                    II. 数组与结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../II.数组与结构/2.1-ADT-数组与结构.html">
+            
+                <a href="../II.数组与结构/2.1-ADT-数组与结构.html">
+            
+                    
+                    2.1 ADT 数组与结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../II.数组与结构/2.2-ADT-多项式.html">
+            
+                <a href="../II.数组与结构/2.2-ADT-多项式.html">
+            
+                    
+                    2.2 ADT 多项式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../II.数组与结构/2.3-ADT-稀疏矩阵.html">
+            
+                <a href="../II.数组与结构/2.3-ADT-稀疏矩阵.html">
+            
+                    
+                    2.3 ADT 稀疏矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../II.数组与结构/2.4-ADT-字符串.html">
+            
+                <a href="../II.数组与结构/2.4-ADT-字符串.html">
+            
+                    
+                    2.4 ADT 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../III.栈与队列/">
+            
+                <a href="../III.栈与队列/">
+            
+                    
+                    III. 栈与队列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../III.栈与队列/3.1-ADT-栈.html">
+            
+                <a href="../III.栈与队列/3.1-ADT-栈.html">
+            
+                    
+                    3.1 ADT 栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../III.栈与队列/3.2-ADT-队列.html">
+            
+                <a href="../III.栈与队列/3.2-ADT-队列.html">
+            
+                    
+                    3.2 ADT 队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../III.栈与队列/3.3-迷宫问题.html">
+            
+                <a href="../III.栈与队列/3.3-迷宫问题.html">
+            
+                    
+                    3.3 迷宫问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../III.栈与队列/3.4-表达式求值.html">
+            
+                <a href="../III.栈与队列/3.4-表达式求值.html">
+            
+                    
+                    3.4 表达式求值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../IV.链表/">
+            
+                <a href="../IV.链表/">
+            
+                    
+                    IV. 链表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../IV.链表/4.1-指针.html">
+            
+                <a href="../IV.链表/4.1-指针.html">
+            
+                    
+                    4.1 指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../IV.链表/4.2-单向链表.html">
+            
+                <a href="../IV.链表/4.2-单向链表.html">
+            
+                    
+                    4.2 单向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../IV.链表/4.3-多项式.html">
+            
+                <a href="../IV.链表/4.3-多项式.html">
+            
+                    
+                    4.3 多项式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../IV.链表/4.4-链表的其他操作.html">
+            
+                <a href="../IV.链表/4.4-链表的其他操作.html">
+            
+                    
+                    4.4 链表的其他操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../IV.链表/4.5-等价关系.html">
+            
+                <a href="../IV.链表/4.5-等价关系.html">
+            
+                    
+                    4.5 等价关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../IV.链表/4.6-稀疏矩阵.html">
+            
+                <a href="../IV.链表/4.6-稀疏矩阵.html">
+            
+                    
+                    4.6 稀疏矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../IV.链表/4.7-双向链表.html">
+            
+                <a href="../IV.链表/4.7-双向链表.html">
+            
+                    
+                    4.7 双向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    V. 树
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="5.1-概述.html">
+            
+                <a href="5.1-概述.html">
+            
+                    
+                    5.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="5.2-二叉树.html">
+            
+                <a href="5.2-二叉树.html">
+            
+                    
+                    5.2 二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="5.3-二叉树的遍历.html">
+            
+                <a href="5.3-二叉树的遍历.html">
+            
+                    
+                    5.3 二叉树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="5.4-二叉树的其他操作.html">
+            
+                <a href="5.4-二叉树的其他操作.html">
+            
+                    
+                    5.4 二叉树的其他操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="5.5-线索二叉树.html">
+            
+                <a href="5.5-线索二叉树.html">
+            
+                    
+                    5.5 线索二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="5.6-堆.html">
+            
+                <a href="5.6-堆.html">
+            
+                    
+                    5.6 堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="5.7-二叉查找树.html">
+            
+                <a href="5.7-二叉查找树.html">
+            
+                    
+                    5.7 二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.8" data-path="5.8-选择树.html">
+            
+                <a href="5.8-选择树.html">
+            
+                    
+                    5.8 选择树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="5.9-森林.html">
+            
+                <a href="5.9-森林.html">
+            
+                    
+                    5.9 森林
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="5.10-集合表示.html">
+            
+                <a href="5.10-集合表示.html">
+            
+                    
+                    5.10 集合表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="5.11-二叉树计数.html">
+            
+                <a href="5.11-二叉树计数.html">
+            
+                    
+                    5.11 二叉树计数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../VI.图/">
+            
+                <a href="../VI.图/">
+            
+                    
+                    VI. 图
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../VI.图/6.1-概述.html">
+            
+                <a href="../VI.图/6.1-概述.html">
+            
+                    
+                    6.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../VI.图/6.2-图的存储表示.html">
+            
+                <a href="../VI.图/6.2-图的存储表示.html">
+            
+                    
+                    6.2 图的存储表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../VI.图/6.3-图的基本操作.html">
+            
+                <a href="../VI.图/6.3-图的基本操作.html">
+            
+                    
+                    6.3 图的基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../VI.图/6.4-最小代价生成树.html">
+            
+                <a href="../VI.图/6.4-最小代价生成树.html">
+            
+                    
+                    6.4 最小代价生成树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../VI.图/6.5-最短路径与传递闭包.html">
+            
+                <a href="../VI.图/6.5-最短路径与传递闭包.html">
+            
+                    
+                    6.5 最短路径与传递闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >5.8 选择树</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="58-&#x9009;&#x62E9;&#x6811;">5.8 &#x9009;&#x62E9;&#x6811;</h3>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x5DF2;&#x6392;&#x5E8F;&#x7684;&#x5E8F;&#x5217;&#x79F0;&#x4E3A;&#x4E00;&#x4E2A; <strong>&#x300C;&#x5F52;&#x5E76;&#x6BB5; run&#x300D;</strong>&#x3002;</li>
+<li><strong>&#x300C;&#x9009;&#x62E9;&#x6811; selection tree&#x300D;</strong> &#x662F;&#x4E00;&#x68F5;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x90FD;&#x4EE3;&#x8868;&#x8BE5;&#x7ED3;&#x70B9;&#x4E24;&#x4E2A;&#x513F;&#x5B50;&#x4E2D;&#x7684;&#x8F83;&#x5C0F;&#x8005;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x6811;&#x7684;&#x6839;&#x7ED3;&#x70B9;&#x8868;&#x793A;&#x6811;&#x4E2D;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#x7684;&#x7ED3;&#x70B9;&#x3002;</li>
+</ul>
+<p>&#x5047;&#x8BBE;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x4E2A;&#x5F52;&#x5E76;&#x6BB5;&#xFF0C;&#x8981;&#x5C06;&#x5176;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6392;&#x5E8F;&#x5E8F;&#x5217;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x90FD;&#x7531;&#x82E5;&#x5E72;&#x4E2A;&#x8BB0;&#x5F55;&#x7EC4;&#x6210;&#xFF0C;&#x5E76;&#x4E14;&#x6309;&#x6307;&#x5B9A;&#x7684;&#x57DF; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi>e</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">key</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span>&#xFF08;&#x79F0;&#x4E3A;&#x5173;&#x952E;&#x5B57;&#xFF09;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x3002;&#x4EE4; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> &#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x4E2A;&#x5F52;&#x5E76;&#x6BB5;&#x7684;&#x8BB0;&#x5F55;&#x603B;&#x6570;&#x3002;</p>
+<p>&#x6700;&#x76F4;&#x63A5;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x8FDB;&#x884C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mbin">&#x2212;</span><span class="mord mathrm">1</span></span></span></span> &#x6B21;&#x6BD4;&#x8F83;&#xFF0C;&#x4ECE;&#x800C;&#x786E;&#x5B9A;&#x4E0B;&#x4E00;&#x4E2A;&#x8981;&#x8F93;&#x51FA;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x5BF9;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>&gt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k&gt;2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mrel">&gt;</span><span class="mord mathrm">2</span></span></span></span>&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x9009;&#x62E9;&#x6811;&#x7684;&#x601D;&#x60F3;&#x6765;&#x51CF;&#x5C11;&#x5BFB;&#x627E;&#x4E0B;&#x4E00;&#x4E2A;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#x6240;&#x9700;&#x8981;&#x7684;&#x6BD4;&#x8F83;&#x6B21;&#x6570;&#x3002;</p>
+<p>&#x5982;&#x56FE;&#x8868;&#x793A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">k=8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mrel">=</span><span class="mord mathrm">8</span></span></span></span> &#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x9009;&#x62E9;&#x6811;&#x3002;&#x9009;&#x62E9;&#x6811;&#x7684;&#x5EFA;&#x7ACB;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x6BD4;&#x4F5C;&#x8FDB;&#x884C;&#x6BD4;&#x8D5B;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x83B7;&#x80DC;&#x8005;&#x662F;&#x6709;&#x8F83;&#x5C0F;&#x5173;&#x952E;&#x503C;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x4E8E;&#x662F;&#xFF0C;&#x6811;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x975E;&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x8868;&#x793A;&#x6BD4;&#x8D5B;&#x7684;&#x83B7;&#x80DC;&#x8005;&#xFF0C;&#x800C;&#x6839;&#x7ED3;&#x70B9;&#x8868;&#x793A;&#x6700;&#x540E;&#x7684;&#x83B7;&#x80DC;&#x8005;&#xFF0C;&#x5373;&#x6700;&#x5C0F;&#x7684;&#x5173;&#x952E;&#x5B57;&#x3002;&#x8FD9;&#x91CC;&#x4E00;&#x4E2A;&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x8868;&#x793A;&#x76F8;&#x5E94;&#x5F52;&#x5E76;&#x6BB5;&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x3002;&#x7531;&#x4E8E;&#x8981;&#x5408;&#x5E76;&#x7684;&#x8BB0;&#x5F55;&#x901A;&#x5E38;&#x5F88;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5176;&#x6240;&#x4EE3;&#x8868;&#x7684;&#x8BB0;&#x5F55;&#x7684;&#x6307;&#x9488;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6839;&#x7ED3;&#x70B9;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x5F52;&#x5E76;&#x6BB5; 4 &#x7684;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x6307;&#x9488;&#x3002;</p>
+<p><img src="res/5-26.svg" alt="5-26"></p>
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x5F52;&#x5E76;&#x6BB5; 4 &#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x8FDB;&#x5165;&#x9009;&#x62E9;&#x6811;&#x3002;&#x8FD9;&#x4E2A;&#x8BB0;&#x5F55;&#x503C;&#x4E3A; 15&#x3002;&#x73B0;&#x5728;&#x9700;&#x8981;&#x91CD;&#x5EFA;&#x8FD9;&#x68F5;&#x6811;&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x9700;&#x8981;&#x6CBF;&#x7740;&#x7ED3;&#x70B9; 11 &#x5230;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x8DEF;&#x5F84;&#x91CD;&#x590D;&#x4EE5;&#x4E0A;&#x7684;&#x7ADE;&#x8D5B;&#xFF0C;&#x5373;&#x7ED3;&#x70B9; 10 &#x548C;&#x7ED3;&#x70B9; 11 &#x6BD4;&#x8D5B;&#x5F97;&#x5230;&#x7ED3;&#x70B9; 5&#xFF08;15 &lt; 20&#xFF09;&#xFF0C;&#x7ED3;&#x70B9; 4 &#x548C;&#x7ED3;&#x70B9; 5 &#x6BD4;&#x8D5B;&#x5F97;&#x5230;&#x7ED3;&#x70B9; 2&#xFF08;9 &lt; 15&#xFF09;&#xFF0C;&#x7ED3;&#x70B9; 2 &#x548C;&#x7ED3;&#x70B9; 3 &#x6BD4;&#x8D5B;&#x5F97;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#xFF08;8 &lt; 9&#xFF09;&#x3002;&#x5982;&#x56FE;&#x3002;</p>
+<p><img src="res/5-27.svg" alt="5-27"></p>
+<p>&#x7ADE;&#x8D5B;&#x5728;&#x5144;&#x5F1F;&#x7ED3;&#x70B9;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#xFF0C;&#x7ED3;&#x679C;&#x653E;&#x5728;&#x7236;&#x7ED3;&#x70B9;&#x4E2D;&#x3002;&#x6BCF;&#x6B21;&#x6BD4;&#x8F83;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4E0B;&#x4E00;&#x6B21;&#x6BD4;&#x8F83;&#x90FD;&#x53D1;&#x751F;&#x5728;&#x6811;&#x7684;&#x66F4;&#x9AD8;&#x4E00;&#x5C42;&#x3002;&#x6811;&#x7684;&#x5C42;&#x6570;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&#x2308;</mo><msub><mi>log</mi><mn>2</mn></msub><mi>k</mi><mo>&#x2309;</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lceil \log_2k \rceil + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">&#x2308;</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">&#x2309;</span><span class="mbin">+</span><span class="mord mathrm">1</span></span></span></span>&#x3002;&#x56E0;&#x6B64; &#x91CD;&#x5EFA;&#x6811;&#x7684;&#x65F6;&#x95F4;&#x5F00;&#x9500;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msub><mi>log</mi><mn>2</mn></msub><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log_2k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>&#x3002;&#x6BCF;&#x5F53;&#x4E00;&#x4E2A;&#x8BB0;&#x5F55;&#x5408;&#x5E76;&#x5230;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#xFF0C;&#x6811;&#x90FD;&#x9700;&#x8981;&#x91CD;&#x5EFA;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5408;&#x5E76;&#x6240;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> &#x4E2A;&#x8BB0;&#x5F55;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msub><mi>log</mi><mn>2</mn></msub><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log_2k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>&#x3002;&#x7B2C;&#x4E00;&#x6B21;&#x6784;&#x5EFA;&#x9009;&#x62E9;&#x6811;&#x6240;&#x9700;&#x8981;&#x7684;&#x65F6;&#x95F4;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5408;&#x5E76;&#x6240;&#x6709; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> &#x4E2A;&#x5F52;&#x5E76;&#x6BB5;&#x603B;&#x65F6;&#x95F4;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msub><mi>log</mi><mn>2</mn></msub><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n\log_2k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist"><span style="top:0.24444em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span>&#x3002;</p>
+<ul>
+<li><strong>&#x300C;&#x8D25;&#x8005;&#x6811; tree of loser&#x300D;</strong> &#x5728;&#x6BCF;&#x4E2A;&#x975E;&#x53F6;&#x5B50;&#x7ED3;&#x70B9;&#x4E2D;&#x5B58;&#x653E;&#x4E00;&#x4E2A;&#x5931;&#x8D25;&#x7ED3;&#x70B9;&#xFF08;&#x800C;&#x4E0D;&#x662F;&#x83B7;&#x80DC;&#x8005;&#xFF09;&#x7684;&#x5173;&#x952E;&#x5B57;&#x503C;&#x7684;&#x7ADE;&#x4E89;&#x6811;&#x3002;&#x8D25;&#x8005;&#x6811;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x6811;&#x7684;&#x91CD;&#x5EFA;&#x8FC7;&#x7A0B;&#xFF0C;&#x6BCF;&#x6B21;&#x91CD;&#x5EFA;&#x6811;&#x65F6;&#x6BD4;&#x8D5B;&#x65E0;&#x9700;&#x53D1;&#x751F;&#x5728;&#x5144;&#x5F1F;&#x7ED3;&#x70B9;&#x4E4B;&#x95F4;&#xFF0C;&#x53EA;&#x9700;&#x4E0E;&#x5176;&#x7236;&#x7ED3;&#x70B9;&#x6BD4;&#x8F83;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5C06;&#x8D25;&#x8005;&#x5B58;&#x653E;&#x4E8E;&#x7236;&#x7ED3;&#x70B9;&#xFF0C;&#x5C06;&#x80DC;&#x8005;&#x518D;&#x4E0E;&#x7236;&#x7ED3;&#x70B9;&#x7684;&#x7236;&#x7ED3;&#x70B9;&#x6BD4;&#x8F83;&#x3002;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x9644;&#x52A0;&#x7684;&#x7ED3;&#x70B9; ---- &#x7ED3;&#x70B9; 0&#xFF0C;&#x7528;&#x6765;&#x8868;&#x793A;&#x6BD4;&#x8D5B;&#x6700;&#x7EC8;&#x7684;&#x83B7;&#x80DC;&#x8005;&#x3002;&#x5982;&#x56FE;&#x3002;</li>
+</ul>
+<p><img src="res/5-28.svg" alt="5-28"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="5.7-二叉查找树.html" class="navigation navigation-prev " aria-label="Previous page: 5.7 二叉查找树">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="5.9-森林.html" class="navigation navigation-next " aria-label="Next page: 5.9 森林">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.8 选择树","level":"1.7.8","depth":2,"next":{"title":"5.9 森林","level":"1.7.9","depth":2,"path":"content/V.树/5.9-森林.md","ref":"content/V.树/5.9-森林.md","articles":[]},"previous":{"title":"5.7 二叉查找树","level":"1.7.7","depth":2,"path":"content/V.树/5.7-二叉查找树.md","ref":"content/V.树/5.7-二叉查找树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/travelDog152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/travelDog57.png","appleTouchMore":{"120x120":"/res/travelDog120.png","180x180":"/res/travelDog180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/V.树/5.8-选择树.md","mtime":"2020-06-20T13:56:44.200Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-15T12:02:22.993Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -58,6 +58,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="6.4-最小代价生成树.html" />
+    
     
     <link rel="prev" href="6.2-图的存储表示.html" />
     
@@ -669,6 +671,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.8.4" data-path="6.4-最小代价生成树.html">
+            
+                <a href="6.4-最小代价生成树.html">
+            
+                    
+                    6.4 最小代价生成树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="6.5-最短路径与传递闭包.html">
+            
+                <a href="6.5-最短路径与传递闭包.html">
+            
+                    
+                    6.5 最短路径与传递闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -809,13 +837,55 @@
 <li>&#x9876;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">5</span></span></span></span> &#x662F;&#x4E00;&#x4E2A;&#x5173;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6709;&#x4E00;&#x4E2A;&#x513F;&#x5B50;&#x9876;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">6</span></span></span></span>&#xFF0C;&#x4F7F;&#x5F97; <code>low(6)</code> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mn>5</mn><mo>&#x2265;</mo></mrow><annotation encoding="application/x-tex">= 5 \geq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="base textstyle uncramped"><span class="mrel">=</span><span class="mord mathrm">5</span><span class="mrel">&#x2265;</span></span></span></span> <code>dfn(5)</code> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">= 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mrel">=</span><span class="mord mathrm">5</span></span></span></span>&#xFF1B;</li>
 <li>&#x6839;&#x9876;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span></span></span></span> &#x662F;&#x5173;&#x8282;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x7684;&#x513F;&#x5B50;&#x4E2A;&#x6570;&#x591A;&#x4E8E; 1&#x3002;</li>
 </ol>
-<p>&#x9876;&#x70B9; | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">4</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">5</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">6</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">7</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">8</span></span></span></span> | <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn></mrow><annotation encoding="application/x-tex">9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">9</span></span></span></span>
-:-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-:
-<code>dfn</code> | 4 | 3 | 2 | 0 | 1 | 5 | 6 | 7 | 9 | 8
-<code>low</code> | 4 | 3 | 0 | 0 | 0 | 5 | 5 | 7 | 9 | 8</p>
 </li>
-<li><p><code>bicon</code> &#x51FD;&#x6570;&#x662F;&#x6C42;&#x89E3;&#x56FE;&#x7684;&#x53CC;&#x8FDE;&#x901A;&#x5206;&#x652F;&#xFF0C;<code>bicon</code> &#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x662F; <code>bicon(x, -1)</code>&#xFF0C;&#x5176;&#x4E2D; <code>x</code> &#x662F;&#x751F;&#x6210;&#x6811;&#x7684;&#x6839;&#x3002;</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x9876;&#x70B9;</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">4</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">5</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">6</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">7</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">8</span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn></mrow><annotation encoding="application/x-tex">9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">9</span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>dfn</code></td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">8</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>low</code></td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>bicon</code> &#x51FD;&#x6570;&#x662F;&#x6C42;&#x89E3;&#x56FE;&#x7684;&#x53CC;&#x8FDE;&#x901A;&#x5206;&#x652F;&#xFF0C;<code>bicon</code> &#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#x662F; <code>bicon(x, -1)</code>&#xFF0C;&#x5176;&#x4E2D; <code>x</code> &#x662F;&#x751F;&#x6210;&#x6811;&#x7684;&#x6839;&#x3002;</li>
 </ul>
 <pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MIN2(x, y) ((x) &lt; (y) ? (x) : (y))</span>
 <span class="hljs-keyword">short</span> <span class="hljs-keyword">int</span> dfn[MAX_VERTICES];
@@ -875,10 +945,14 @@
 
             
                 
-                <a href="6.2-图的存储表示.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 6.2 图的存储表示">
+                <a href="6.2-图的存储表示.html" class="navigation navigation-prev " aria-label="Previous page: 6.2 图的存储表示">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="6.4-最小代价生成树.html" class="navigation navigation-next " aria-label="Next page: 6.4 最小代价生成树">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -887,7 +961,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.3 图的基本操作","level":"1.8.3","depth":2,"previous":{"title":"6.2 图的存储表示","level":"1.8.2","depth":2,"path":"content/VI.图/6.2-图的存储表示.md","ref":"content/VI.图/6.2-图的存储表示.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/travelDog152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/travelDog57.png","appleTouchMore":{"120x120":"/res/travelDog120.png","180x180":"/res/travelDog180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/VI.图/6.3-图的基本操作.md","mtime":"2020-07-14T07:09:22.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T07:17:48.452Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.3 图的基本操作","level":"1.8.3","depth":2,"next":{"title":"6.4 最小代价生成树","level":"1.8.4","depth":2,"path":"content/VI.图/6.4-最小代价生成树.md","ref":"content/VI.图/6.4-最小代价生成树.md","articles":[]},"previous":{"title":"6.2 图的存储表示","level":"1.8.2","depth":2,"path":"content/VI.图/6.2-图的存储表示.md","ref":"content/VI.图/6.2-图的存储表示.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/travelDog152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/travelDog57.png","appleTouchMore":{"120x120":"/res/travelDog120.png","180x180":"/res/travelDog180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/VI.图/6.3-图的基本操作.md","mtime":"2020-07-21T14:44:10.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-15T12:02:22.993Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

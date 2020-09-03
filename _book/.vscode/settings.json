@@ -1,4 +1,5 @@
 {
     "editor.fontSize": 14,
-    "markdown-preview-enhanced.previewTheme": "one-dark.css"
+    "markdown-preview-enhanced.previewTheme": "one-dark.css",
+    "git.ignoreLimitWarning": true
 }

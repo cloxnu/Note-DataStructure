@@ -46,4 +46,6 @@
     * [6.6 活动网络](content/VI.图/6.6-活动网络.md)
 * [VII. 排序](content/VII.排序/README.md)
     * [7.1 查找与表验证](content/VII.排序/7.1-查找与表验证.md)
+    * [7.2 定义](content/VII.排序/7.2-定义.md)
+    * [7.3 插入排序](content/VII.排序/7.3-插入排序.md)
 

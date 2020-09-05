@@ -1,0 +1,898 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6.2 图的存储表示 · 数据结构</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="cloxnu">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6.3-图的基本操作.html" />
+    
+    
+    <link rel="prev" href="6.1-概述.html" />
+    
+
+    
+        <link rel="shortcut icon" href="/res/favicon.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="/res/favicon.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/res/travelDog152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../序.html">
+            
+                <a href="../序.html">
+            
+                    
+                    序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../I.基本概念/">
+            
+                <a href="../I.基本概念/">
+            
+                    
+                    I. 基本概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../I.基本概念/1.1-算法.html">
+            
+                <a href="../I.基本概念/1.1-算法.html">
+            
+                    
+                    1.1 算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../I.基本概念/1.2-递归算法.html">
+            
+                <a href="../I.基本概念/1.2-递归算法.html">
+            
+                    
+                    1.2 递归算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../I.基本概念/1.3-数据抽象.html">
+            
+                <a href="../I.基本概念/1.3-数据抽象.html">
+            
+                    
+                    1.3 数据抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../I.基本概念/1.4-空间复杂度和时间复杂度.html">
+            
+                <a href="../I.基本概念/1.4-空间复杂度和时间复杂度.html">
+            
+                    
+                    1.4 空间复杂度和时间复杂度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../II.数组与结构/">
+            
+                <a href="../II.数组与结构/">
+            
+                    
+                    II. 数组与结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../II.数组与结构/2.1-ADT-数组与结构.html">
+            
+                <a href="../II.数组与结构/2.1-ADT-数组与结构.html">
+            
+                    
+                    2.1 ADT 数组与结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../II.数组与结构/2.2-ADT-多项式.html">
+            
+                <a href="../II.数组与结构/2.2-ADT-多项式.html">
+            
+                    
+                    2.2 ADT 多项式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../II.数组与结构/2.3-ADT-稀疏矩阵.html">
+            
+                <a href="../II.数组与结构/2.3-ADT-稀疏矩阵.html">
+            
+                    
+                    2.3 ADT 稀疏矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../II.数组与结构/2.4-ADT-字符串.html">
+            
+                <a href="../II.数组与结构/2.4-ADT-字符串.html">
+            
+                    
+                    2.4 ADT 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../III.栈与队列/">
+            
+                <a href="../III.栈与队列/">
+            
+                    
+                    III. 栈与队列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../III.栈与队列/3.1-ADT-栈.html">
+            
+                <a href="../III.栈与队列/3.1-ADT-栈.html">
+            
+                    
+                    3.1 ADT 栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../III.栈与队列/3.2-ADT-队列.html">
+            
+                <a href="../III.栈与队列/3.2-ADT-队列.html">
+            
+                    
+                    3.2 ADT 队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../III.栈与队列/3.3-迷宫问题.html">
+            
+                <a href="../III.栈与队列/3.3-迷宫问题.html">
+            
+                    
+                    3.3 迷宫问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../III.栈与队列/3.4-表达式求值.html">
+            
+                <a href="../III.栈与队列/3.4-表达式求值.html">
+            
+                    
+                    3.4 表达式求值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../IV.链表/">
+            
+                <a href="../IV.链表/">
+            
+                    
+                    IV. 链表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../IV.链表/4.1-指针.html">
+            
+                <a href="../IV.链表/4.1-指针.html">
+            
+                    
+                    4.1 指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../IV.链表/4.2-单向链表.html">
+            
+                <a href="../IV.链表/4.2-单向链表.html">
+            
+                    
+                    4.2 单向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../IV.链表/4.3-多项式.html">
+            
+                <a href="../IV.链表/4.3-多项式.html">
+            
+                    
+                    4.3 多项式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../IV.链表/4.4-链表的其他操作.html">
+            
+                <a href="../IV.链表/4.4-链表的其他操作.html">
+            
+                    
+                    4.4 链表的其他操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../IV.链表/4.5-等价关系.html">
+            
+                <a href="../IV.链表/4.5-等价关系.html">
+            
+                    
+                    4.5 等价关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../IV.链表/4.6-稀疏矩阵.html">
+            
+                <a href="../IV.链表/4.6-稀疏矩阵.html">
+            
+                    
+                    4.6 稀疏矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../IV.链表/4.7-双向链表.html">
+            
+                <a href="../IV.链表/4.7-双向链表.html">
+            
+                    
+                    4.7 双向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../V.树/">
+            
+                <a href="../V.树/">
+            
+                    
+                    V. 树
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../V.树/5.1-概述.html">
+            
+                <a href="../V.树/5.1-概述.html">
+            
+                    
+                    5.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../V.树/5.2-二叉树.html">
+            
+                <a href="../V.树/5.2-二叉树.html">
+            
+                    
+                    5.2 二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../V.树/5.3-二叉树的遍历.html">
+            
+                <a href="../V.树/5.3-二叉树的遍历.html">
+            
+                    
+                    5.3 二叉树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../V.树/5.4-二叉树的其他操作.html">
+            
+                <a href="../V.树/5.4-二叉树的其他操作.html">
+            
+                    
+                    5.4 二叉树的其他操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../V.树/5.5-线索二叉树.html">
+            
+                <a href="../V.树/5.5-线索二叉树.html">
+            
+                    
+                    5.5 线索二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../V.树/5.6-堆.html">
+            
+                <a href="../V.树/5.6-堆.html">
+            
+                    
+                    5.6 堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../V.树/5.7-二叉查找树.html">
+            
+                <a href="../V.树/5.7-二叉查找树.html">
+            
+                    
+                    5.7 二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../V.树/5.8-选择树.html">
+            
+                <a href="../V.树/5.8-选择树.html">
+            
+                    
+                    5.8 选择树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../V.树/5.9-森林.html">
+            
+                <a href="../V.树/5.9-森林.html">
+            
+                    
+                    5.9 森林
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../V.树/5.10-集合表示.html">
+            
+                <a href="../V.树/5.10-集合表示.html">
+            
+                    
+                    5.10 集合表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../V.树/5.11-二叉树计数.html">
+            
+                <a href="../V.树/5.11-二叉树计数.html">
+            
+                    
+                    5.11 二叉树计数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    VI. 图
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="6.1-概述.html">
+            
+                <a href="6.1-概述.html">
+            
+                    
+                    6.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="6.2-图的存储表示.html">
+            
+                <a href="6.2-图的存储表示.html">
+            
+                    
+                    6.2 图的存储表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="6.3-图的基本操作.html">
+            
+                <a href="6.3-图的基本操作.html">
+            
+                    
+                    6.3 图的基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="6.4-最小代价生成树.html">
+            
+                <a href="6.4-最小代价生成树.html">
+            
+                    
+                    6.4 最小代价生成树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="6.5-最短路径与传递闭包.html">
+            
+                <a href="6.5-最短路径与传递闭包.html">
+            
+                    
+                    6.5 最短路径与传递闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="6.6-活动网络.html">
+            
+                <a href="6.6-活动网络.html">
+            
+                    
+                    6.6 活动网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >6.2 图的存储表示</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="62-&#x56FE;&#x7684;&#x5B58;&#x50A8;&#x8868;&#x793A;">6.2 &#x56FE;&#x7684;&#x5B58;&#x50A8;&#x8868;&#x793A;</h3>
+<p>&#x7814;&#x7A76;&#x4EE5;&#x4E0B;&#x4E09;&#x79CD;&#x56FE;&#x7684;&#x5E38;&#x7528;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li><strong>&#x300C;&#x90BB;&#x63A5;&#x77E9;&#x9635; adjacency matrices&#x300D;</strong> &#x5047;&#x8BBE;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">G</span></span></span></span> &#x7684;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x662F; <code>adj_mat</code>&#xFF0C;&#x662F;&#x4E00;&#x4E2A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&#xD7;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n \times n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mbin">&#xD7;</span><span class="mord mathit">n</span></span></span></span> &#x7684;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#x3002;&#x5982;&#x679C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>v</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(v_i, v_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span> &#xFF08;&#x6216; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo><msub><mi>v</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>j</mi></msub><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">&lt;v_i, v_j&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.8252079999999999em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mrel">&lt;</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">&gt;</span></span></span></span>&#xFF09;&#x662F;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">G</span></span></span></span> &#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8FB9;&#xFF0C;&#x5219; <code>adj_mat[i][j] = 1</code>&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x8FB9;&#xFF0C;&#x5219; <code>adj_mat[i][j] = 0</code>&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x3002;&#x5BF9;&#x4E8E;&#x65E0;&#x5411;&#x56FE;&#x800C;&#x8A00;&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>v</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(v_i, v_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span> &#x548C; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>v</mi><mi>j</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(v_j, v_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span> &#x662F;&#x540C;&#x4E00;&#x6761;&#x8FB9;&#xFF0C;&#x6240;&#x4EE5;&#x65E0;&#x5411;&#x56FE;&#x7684;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x4E00;&#x5B9A;&#x662F;&#x5BF9;&#x79F0;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4E3A;&#x4E86;&#x8282;&#x7701;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x65E0;&#x5411;&#x56FE;&#x7684;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x53EA;&#x9700;&#x5B58;&#x50A8;&#x5176;&#x4E0A;&#x4E09;&#x89D2;&#x6216;&#x4E0B;&#x4E09;&#x89D2;&#x90E8;&#x5206;&#x3002;</li>
+</ul>
+<p><img src="res/6-6.svg" alt="6-6"></p>
+<ul>
+<li><p><strong>&#x300C;&#x90BB;&#x63A5;&#x8868; adjacency lists&#x300D;</strong> &#x901A;&#x5E38;&#xFF0C;&#x628A;&#x8FB9;&#x5F88;&#x5C11;&#x7684;&#x56FE;&#x79F0;&#x4E3A; <strong>&#x300C;&#x7A00;&#x758F;&#x56FE; sparse graphs&#x300D;</strong>&#xFF0C;&#x5728;&#x7A00;&#x758F;&#x56FE;&#x7684;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#x4E2D;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5143;&#x7D20;&#x503C;&#x4E3A; 0&#xFF0C;&#x5728;&#x626B;&#x63CF;&#x6240;&#x6709;&#x8FB9;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x4F7F;&#x7528;&#x5F88;&#x591A;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x65F6;&#x95F4;&#x6765;&#x68C0;&#x67E5;&#x8FD9;&#x4E9B; 0 &#x5143;&#x7D20;&#xFF0C;&#x56E0;&#x6B64;&#x5F15;&#x5165;&#x90BB;&#x63A5;&#x8868;&#x3002;
+&#x5728;&#x90BB;&#x63A5;&#x8868;&#x5B58;&#x50A8;&#x8868;&#x793A;&#x4E2D;&#xFF0C;&#x7528; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> &#x4E2A;&#x94FE;&#x8868;&#x4EE3;&#x66FF;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x4E2D;&#x7684; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> &#x884C;&#x3002;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">G</span></span></span></span> &#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#xFF0C;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x7ED3;&#x70B9;&#x5C31;&#x662F;&#x4E0E;&#x9876;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> &#x76F8;&#x90BB;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">G_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">G</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#x548C;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">G_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">G</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">3</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#x7684;&#x90BB;&#x63A5;&#x8868;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x3002;</p>
+<p><img src="res/6-7.svg" alt="6-7"></p>
+<ul>
+<li>&#x300C;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#x300D;&#x4F7F;&#x7528;&#x90BB;&#x63A5;&#x8868;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#x7684;&#x56FE;&#x4E5F;&#x53EF;&#x4EE5;&#x628A;&#x9876;&#x70B9;&#x8FDB;&#x884C;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x6307;&#x9488;&#x57DF;&#x3002;&#x5047;&#x5B9A;&#x7528;&#x6570;&#x7EC4; <code>node[]</code> &#x5B58;&#x50A8;&#x9876;&#x70B9;&#xFF0C;&#x90A3;&#x4E48; <code>node[i]</code> &#x7684;&#x503C;&#x662F;&#x9876;&#x70B9; <code>i</code> &#x6240;&#x5BF9;&#x5E94;&#x94FE;&#x8868;&#x5728;&#x6570;&#x7EC4; <code>node[]</code> &#x4E2D;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;&#x9876;&#x70B9; <code>i</code> &#x7684;&#x6240;&#x6709;&#x90BB;&#x63A5;&#x9876;&#x70B9;&#x4F9D;&#x6B21;&#x5B58;&#x653E;&#x5728; <code>node[i], ..., node[i+1]-1</code> &#x4E2D;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x7ED9;&#x51FA;&#x4E86;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">G_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">G</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#x7684;&#x8FD9;&#x79CD;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#x8868;&#x793A;&#x3002;</li>
+</ul>
+<div align="center">
+  <img src="res/6-8.svg" width="300px">
+</div>
+
+<ul>
+<li><strong>&#x300C;&#x9006;&#x90BB;&#x63A5;&#x8868; inverse adjacency lists&#x300D;</strong> &#x5728;&#x4F7F;&#x7528;&#x90BB;&#x63A5;&#x8868;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5F97;&#x5230;&#x6709;&#x5411;&#x56FE;&#x7684;&#x4E00;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x5165;&#x5EA6;&#x662F;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#xFF0C;&#x73B0;&#x5728;&#x5F15;&#x5165;&#x300C;&#x9006;&#x90BB;&#x63A5;&#x8868;&#x300D;&#xFF0C;&#x4E0E;&#x90BB;&#x63A5;&#x8868;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x9006;&#x90BB;&#x63A5;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x94FE;&#x8868;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x90BB;&#x63A5;&#x5230;&#xFF08;&#x4E0E;&#x90BB;&#x63A5;&#x4E8E;&#x76F8;&#x533A;&#x522B;&#xFF09;&#x5BF9;&#x5E94;&#x9876;&#x70B9;&#x7684;&#x6240;&#x6709;&#x9876;&#x70B9;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#x662F;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">G_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">G</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">3</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#x7684;&#x9006;&#x90BB;&#x63A5;&#x8868;&#x3002;</li>
+</ul>
+<div align="center">
+  <img src="res/6-9.svg" width="200px">
+</div>
+
+<ul>
+<li>&#x300C;&#x6B63;&#x4EA4;&#x94FE;&#x8868;&#x5B58;&#x50A8;&#x8868;&#x793A;&#x300D;&#x6539;&#x53D8;&#x90BB;&#x63A5;&#x8868;&#x7684;&#x7ED3;&#x70B9;&#x7ED3;&#x6784;&#x662F;&#x89E3;&#x51B3;&#x8BA1;&#x7B97;&#x9876;&#x70B9;&#x5165;&#x5EA6;&#x95EE;&#x9898;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x9014;&#x5F84;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF0C;&#x6539;&#x53D8;&#x540E;&#x7684;&#x7ED3;&#x70B9;&#x5305;&#x542B;&#x56DB;&#x4E2A;&#x57DF;&#xFF0C;&#x7528;&#x6765;&#x8868;&#x793A;&#x56FE;&#x4E2D;&#x7684;&#x4E00;&#x6761;&#x8FB9;&#x3002;&#x8FD9;&#x4E0E; <a href="../IV.&#x94FE;&#x8868;/4.6-&#x7A00;&#x758F;&#x77E9;&#x9635;.html">4.6 &#x7A00;&#x758F;&#x77E9;&#x9635;</a> &#x91CC;&#x7A00;&#x758F;&#x77E9;&#x9635;&#x7684;&#x5B58;&#x50A8;&#x8868;&#x793A;&#x7C7B;&#x4F3C;&#x3002;</li>
+</ul>
+<p><img src="res/6-10.svg" alt="6-10"></p>
+<div align="center">
+  <p style="color:#3ea69f">
+  &#x5355;&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x7ED3;&#x6784;&#xFF08;&#x4E0A;&#xFF09;&#x548C;&#x56FE;&#x7684;&#x6B63;&#x4EA4;&#x94FE;&#x8868;&#x5B58;&#x50A8;&#x8868;&#x793A;&#xFF08;&#x4E0B;&#xFF09;
+  </p>
+</div>
+</li>
+<li><p><strong>&#x300C;&#x90BB;&#x63A5;&#x591A;&#x91CD;&#x8868; adjacency multilists&#x300D;</strong> &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x67E5;&#x627E;&#x8FB9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>v</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(v_i, v_j)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span> &#x4E2D;&#x9876;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">v_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight" style="margin-right:0.05724em;">j</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#x7684;&#x90BB;&#x63A5;&#x8868;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x5BF9;&#x5DF2;&#x626B;&#x63CF;&#x8FC7;&#x7684;&#x8FB9;&#x505A;&#x4E0A;&#x6807;&#x8BB0;&#x3002;&#x5F15;&#x5165;&#x300C;&#x591A;&#x91CD;&#x8868; multilists&#x300D;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x4E3A;&#x56FE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">G_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">G</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span> &#x7684;&#x90BB;&#x63A5;&#x591A;&#x91CD;&#x8868;&#x5B58;&#x50A8;&#x8868;&#x793A;&#x3002;</p>
+</li>
+</ul>
+<div align="center">
+  <img src="res/6-11.svg" width="500px">
+  <p style="color:#3ea69f">
+  &#x5355;&#x4E2A;&#x7ED3;&#x70B9;&#x7684;&#x7ED3;&#x6784;&#xFF08;&#x4E0A;&#xFF09;&#x548C;&#x56FE;&#x7684;&#x90BB;&#x63A5;&#x591A;&#x91CD;&#x8868;&#x5B58;&#x50A8;&#x8868;&#x793A;&#xFF08;&#x4E0B;&#xFF09;
+  </p>
+</div>
+
+<blockquote>
+<p><strong>&#x5E26;&#x6743;&#x503C;&#x7684;&#x8FB9;</strong></p>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6240;&#x8BA8;&#x8BBA;&#x7684;&#x56FE;&#x90FD;&#x662F;&#x8FB9;&#x4E0A;&#x6CA1;&#x6709;&#x6743;&#x503C;&#x7684;&#x56FE;&#x3002;&#x5728;&#x8BB8;&#x591A;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x56FE;&#x4E2D;&#x7684;&#x8FB9;&#x90FD;&#x88AB;&#x8D4B;&#x4E88;&#x6743;&#x503C;&#x3002;&#x5E26;&#x6743;&#x503C;&#x7684;&#x56FE;&#x5728;&#x90BB;&#x63A5;&#x77E9;&#x9635;&#x5B58;&#x50A8;&#x8868;&#x793A;&#x4E2D;&#x7528;&#x8FB9;&#x7684;&#x6743;&#x503C;&#x53D6;&#x4EE3;&#x539F;&#x6765;&#x7684; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.64444em;"></span><span class="strut bottom" style="height:0.64444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span>&#x3002;&#x5BF9;&#x4E8E;&#x56FE;&#x7684;&#x90BB;&#x63A5;&#x8868;&#x548C;&#x90BB;&#x63A5;&#x591A;&#x91CD;&#x8868;&#x5B58;&#x50A8;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x7ED3;&#x70B9;&#x7684;&#x7ED3;&#x6784;&#x4E0A;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x57DF; <code>weight</code> &#x6765;&#x5B58;&#x50A8;&#x8FB9;&#x4E0A;&#x7684;&#x6743;&#x503C;&#x3002;&#x4E00;&#x4E2A;&#x8FB9;&#x4E0A;&#x5E26;&#x6743;&#x503C;&#x7684;&#x56FE;&#x79F0;&#x4E3A; <strong>&#x300C;&#x7F51;&#x7EDC; network&#x300D;</strong>&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="6.1-概述.html" class="navigation navigation-prev " aria-label="Previous page: 6.1 概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6.3-图的基本操作.html" class="navigation navigation-next " aria-label="Next page: 6.3 图的基本操作">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6.2 图的存储表示","level":"1.8.2","depth":2,"next":{"title":"6.3 图的基本操作","level":"1.8.3","depth":2,"path":"content/VI.图/6.3-图的基本操作.md","ref":"content/VI.图/6.3-图的基本操作.md","articles":[]},"previous":{"title":"6.1 概述","level":"1.8.1","depth":2,"path":"content/VI.图/6.1-概述.md","ref":"content/VI.图/6.1-概述.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/travelDog152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/travelDog57.png","appleTouchMore":{"120x120":"/res/travelDog120.png","180x180":"/res/travelDog180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/VI.图/6.2-图的存储表示.md","mtime":"2020-07-11T12:22:59.846Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-03T04:01:11.193Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

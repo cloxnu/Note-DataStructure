@@ -1,3 +1,7 @@
+<a href="https://note.an.dog">
+    <img src="res/dog_note.svg" style="width: 300px; height: auto;"/>
+</a>
+
 # 数据结构
 
 该笔记来自《数据结构（C语言版）》(Ellis Horowitz, Sartaj Sahni, Susan Anderson-Freed 著) 的整理

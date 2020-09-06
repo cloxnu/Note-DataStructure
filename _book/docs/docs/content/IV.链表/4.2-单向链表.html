@@ -1,0 +1,951 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.2 单向链表 · 数据结构</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="cloxnu">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4.3-多项式.html" />
+    
+    
+    <link rel="prev" href="4.1-指针.html" />
+    
+
+    
+        <link rel="shortcut icon" href="/res/favicon.ico" type="image/x-icon">
+    
+    
+        <link rel="bookmark" href="/res/favicon.ico" type="image/x-icon">
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/res/favicon@152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../序.html">
+            
+                <a href="../序.html">
+            
+                    
+                    序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../I.基本概念/">
+            
+                <a href="../I.基本概念/">
+            
+                    
+                    I. 基本概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../I.基本概念/1.1-算法.html">
+            
+                <a href="../I.基本概念/1.1-算法.html">
+            
+                    
+                    1.1 算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../I.基本概念/1.2-递归算法.html">
+            
+                <a href="../I.基本概念/1.2-递归算法.html">
+            
+                    
+                    1.2 递归算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../I.基本概念/1.3-数据抽象.html">
+            
+                <a href="../I.基本概念/1.3-数据抽象.html">
+            
+                    
+                    1.3 数据抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../I.基本概念/1.4-空间复杂度和时间复杂度.html">
+            
+                <a href="../I.基本概念/1.4-空间复杂度和时间复杂度.html">
+            
+                    
+                    1.4 空间复杂度和时间复杂度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../II.数组与结构/">
+            
+                <a href="../II.数组与结构/">
+            
+                    
+                    II. 数组与结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../II.数组与结构/2.1-ADT-数组与结构.html">
+            
+                <a href="../II.数组与结构/2.1-ADT-数组与结构.html">
+            
+                    
+                    2.1 ADT 数组与结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../II.数组与结构/2.2-ADT-多项式.html">
+            
+                <a href="../II.数组与结构/2.2-ADT-多项式.html">
+            
+                    
+                    2.2 ADT 多项式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../II.数组与结构/2.3-ADT-稀疏矩阵.html">
+            
+                <a href="../II.数组与结构/2.3-ADT-稀疏矩阵.html">
+            
+                    
+                    2.3 ADT 稀疏矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../II.数组与结构/2.4-ADT-字符串.html">
+            
+                <a href="../II.数组与结构/2.4-ADT-字符串.html">
+            
+                    
+                    2.4 ADT 字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../III.栈与队列/">
+            
+                <a href="../III.栈与队列/">
+            
+                    
+                    III. 栈与队列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../III.栈与队列/3.1-ADT-栈.html">
+            
+                <a href="../III.栈与队列/3.1-ADT-栈.html">
+            
+                    
+                    3.1 ADT 栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../III.栈与队列/3.2-ADT-队列.html">
+            
+                <a href="../III.栈与队列/3.2-ADT-队列.html">
+            
+                    
+                    3.2 ADT 队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../III.栈与队列/3.3-迷宫问题.html">
+            
+                <a href="../III.栈与队列/3.3-迷宫问题.html">
+            
+                    
+                    3.3 迷宫问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../III.栈与队列/3.4-表达式求值.html">
+            
+                <a href="../III.栈与队列/3.4-表达式求值.html">
+            
+                    
+                    3.4 表达式求值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    IV. 链表
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="4.1-指针.html">
+            
+                <a href="4.1-指针.html">
+            
+                    
+                    4.1 指针
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="4.2-单向链表.html">
+            
+                <a href="4.2-单向链表.html">
+            
+                    
+                    4.2 单向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="4.3-多项式.html">
+            
+                <a href="4.3-多项式.html">
+            
+                    
+                    4.3 多项式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="4.4-链表的其他操作.html">
+            
+                <a href="4.4-链表的其他操作.html">
+            
+                    
+                    4.4 链表的其他操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="4.5-等价关系.html">
+            
+                <a href="4.5-等价关系.html">
+            
+                    
+                    4.5 等价关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="4.6-稀疏矩阵.html">
+            
+                <a href="4.6-稀疏矩阵.html">
+            
+                    
+                    4.6 稀疏矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="4.7-双向链表.html">
+            
+                <a href="4.7-双向链表.html">
+            
+                    
+                    4.7 双向链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../V.树/">
+            
+                <a href="../V.树/">
+            
+                    
+                    V. 树
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../V.树/5.1-概述.html">
+            
+                <a href="../V.树/5.1-概述.html">
+            
+                    
+                    5.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../V.树/5.2-二叉树.html">
+            
+                <a href="../V.树/5.2-二叉树.html">
+            
+                    
+                    5.2 二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../V.树/5.3-二叉树的遍历.html">
+            
+                <a href="../V.树/5.3-二叉树的遍历.html">
+            
+                    
+                    5.3 二叉树的遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../V.树/5.4-二叉树的其他操作.html">
+            
+                <a href="../V.树/5.4-二叉树的其他操作.html">
+            
+                    
+                    5.4 二叉树的其他操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../V.树/5.5-线索二叉树.html">
+            
+                <a href="../V.树/5.5-线索二叉树.html">
+            
+                    
+                    5.5 线索二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../V.树/5.6-堆.html">
+            
+                <a href="../V.树/5.6-堆.html">
+            
+                    
+                    5.6 堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../V.树/5.7-二叉查找树.html">
+            
+                <a href="../V.树/5.7-二叉查找树.html">
+            
+                    
+                    5.7 二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../V.树/5.8-选择树.html">
+            
+                <a href="../V.树/5.8-选择树.html">
+            
+                    
+                    5.8 选择树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../V.树/5.9-森林.html">
+            
+                <a href="../V.树/5.9-森林.html">
+            
+                    
+                    5.9 森林
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../V.树/5.10-集合表示.html">
+            
+                <a href="../V.树/5.10-集合表示.html">
+            
+                    
+                    5.10 集合表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../V.树/5.11-二叉树计数.html">
+            
+                <a href="../V.树/5.11-二叉树计数.html">
+            
+                    
+                    5.11 二叉树计数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../VI.图/">
+            
+                <a href="../VI.图/">
+            
+                    
+                    VI. 图
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../VI.图/6.1-概述.html">
+            
+                <a href="../VI.图/6.1-概述.html">
+            
+                    
+                    6.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../VI.图/6.2-图的存储表示.html">
+            
+                <a href="../VI.图/6.2-图的存储表示.html">
+            
+                    
+                    6.2 图的存储表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../VI.图/6.3-图的基本操作.html">
+            
+                <a href="../VI.图/6.3-图的基本操作.html">
+            
+                    
+                    6.3 图的基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../VI.图/6.4-最小代价生成树.html">
+            
+                <a href="../VI.图/6.4-最小代价生成树.html">
+            
+                    
+                    6.4 最小代价生成树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../VI.图/6.5-最短路径与传递闭包.html">
+            
+                <a href="../VI.图/6.5-最短路径与传递闭包.html">
+            
+                    
+                    6.5 最短路径与传递闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../VI.图/6.6-活动网络.html">
+            
+                <a href="../VI.图/6.6-活动网络.html">
+            
+                    
+                    6.6 活动网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../VII.排序/">
+            
+                <a href="../VII.排序/">
+            
+                    
+                    VII. 排序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../VII.排序/7.1-查找与表验证.html">
+            
+                <a href="../VII.排序/7.1-查找与表验证.html">
+            
+                    
+                    7.1 查找与表验证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../VII.排序/7.2-定义.html">
+            
+                <a href="../VII.排序/7.2-定义.html">
+            
+                    
+                    7.2 定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../VII.排序/7.3-插入排序.html">
+            
+                <a href="../VII.排序/7.3-插入排序.html">
+            
+                    
+                    7.3 插入排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >4.2 单向链表</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="42-&#x5355;&#x5411;&#x94FE;&#x8868;">4.2 &#x5355;&#x5411;&#x94FE;&#x8868;</h3>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x94FE;&#x8868;&#x88AB;&#x753B;&#x6210;&#x7ED3;&#x70B9;&#x987A;&#x5E8F;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x628A;&#x5176;&#x4E2D;&#x7684;&#x94FE;&#x8868;&#x793A;&#x4E3A;&#x7BAD;&#x5934;&#x3002;&#x6307;&#x5411;&#x8868;&#x4E2D;&#x9996;&#x7ED3;&#x70B9;&#x7684;&#x6307;&#x9488;&#x540D;&#x5C31;&#x662F;&#x94FE;&#x8868;&#x7684;&#x540D;&#x5B57;&#x3002;&#x94FE;&#x8868;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x7ED3;&#x70B9;&#x5E76;&#x4E0D;&#x6309;&#x5730;&#x5740;&#x987A;&#x5E8F;&#x5B58;&#x50A8;</li>
+<li>&#x7ED3;&#x70B9;&#x5730;&#x5740;&#x5728;&#x6BCF;&#x6B21;&#x8FD0;&#x884C;&#x65F6;&#x662F;&#x53EF;&#x53D8;&#x7684;</li>
+</ol>
+<p><img src="res/4-1.svg" alt="4-1"></p>
+<p align="center" style="color:#3ea69f">
+&#x94FE;&#x8868;&#x7684;&#x4E00;&#x822C;&#x753B;&#x6CD5;
+</p>
+
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5728; <code>cat</code> &#x548C; <code>sat</code> &#x4E2D;&#x63D2;&#x5165; <code>mat</code>&#xFF0C;&#x6240;&#x9700;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#xFF1A;</p>
+<ol>
+<li>&#x7533;&#x8BF7;&#x5F53;&#x524D;&#x672A;&#x7528;&#x7684;&#x65B0;&#x7ED3;&#x70B9;&#xFF0C;&#x4EE4;&#x5B83;&#x7684;&#x5730;&#x5740;&#x662F; <code>paddr</code></li>
+<li>&#x628A;&#x65B0;&#x7ED3;&#x70B9;&#x7684;&#x503C;&#x57DF;&#x8BBE;&#x4E3A; <code>mat</code></li>
+<li>&#x628A; <code>paddr</code> &#x7684;&#x94FE;&#x57DF;&#x8BBE;&#x7F6E;&#x4E3A;&#x5305;&#x542B; <code>cat</code> &#x7ED3;&#x70B9;&#x7684;&#x94FE;&#x57DF;&#x7684;&#x5730;&#x5740;</li>
+<li>&#x628A;&#x5305;&#x542B;&#x7ED3;&#x70B9; <code>cat</code> &#x7684;&#x94FE;&#x57DF;&#x8BBE;&#x7F6E;&#x4E3A; <code>paddr</code></li>
+</ol>
+<p><img src="res/4-2.svg" alt="4-2"></p>
+<p align="center" style="color:#3ea69f">
+&#x5728; cat &#x540E;&#x63D2;&#x5165; mat
+</p>
+
+<p>&#x5F53;&#x9700;&#x8981;&#x4ECE;&#x8868;&#x4E2D;&#x5220;&#x9664; <code>mat</code>&#xFF0C;&#x5148;&#x627E;&#x5230; <code>mat</code> &#x7684;&#x524D;&#x9A71; <code>cat</code>&#xFF0C;&#x5E76;&#x4E14;&#x628A;&#x5176;&#x94FE;&#x57DF;&#x8BBE;&#x4E3A; <code>mat</code> &#x7684;&#x94FE;&#x57DF;&#x3002;</p>
+<p><img src="res/4-3.svg" alt="4-3"></p>
+<p align="center" style="color:#3ea69f">
+&#x4ECE;&#x8868;&#x4E2D;&#x5220;&#x9664; mat
+</p>
+
+<blockquote>
+<p><strong>PS:</strong> </p>
+<p>&#x5728; C &#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x5982;&#x679C; <code>e</code> &#x662F;&#x4E00;&#x4E2A;&#x6307;&#x5411;&#x57DF;&#x540D;&#x4E3A; <code>name</code> &#x7684;&#x7ED3;&#x6784;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x90A3;&#x4E48; <code>e-&gt;name</code> &#x5C31;&#x662F;&#x8868;&#x8FBE;&#x5F0F; <code>(*e).name</code> &#x7684;&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#x3002;&#x8FD0;&#x7B97;&#x7B26; <code>-&gt;</code> &#x79F0;&#x4E3A; <strong>&#x300C;&#x7ED3;&#x6784;&#x6210;&#x5458; structure member&#x300D;</strong> &#x9009;&#x62E9;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+</blockquote>
+<ul>
+<li><strong>&#x300C;&#x52A8;&#x6001;&#x94FE;&#x6808;&#x300D;&#x4E0E;&#x300C;&#x52A8;&#x6001;&#x94FE;&#x961F;&#x5217;&#x300D;</strong></li>
+</ul>
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x94FE;&#x6808;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x4ECE;&#x6808;&#x9876;&#x63D2;&#x5165;&#x6216;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x3002;</p>
+<p><img src="res/4-4.svg" alt="4-4"></p>
+<p align="center" style="color:#3ea69f">
+&#x94FE;&#x6808;
+</p>
+
+<p>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x94FE;&#x961F;&#x5217;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x5730;&#x5728;&#x961F;&#x5C3E;&#x63D2;&#x5165;&#x7ED3;&#x70B9;&#xFF0C;&#x5728;&#x961F;&#x5217;&#x524D;&#x7AEF;&#x5220;&#x9664;&#x7ED3;&#x70B9;&#x3002;</p>
+<p><img src="res/4-5.svg" alt="4-5"></p>
+<p align="center" style="color:#3ea69f">
+&#x94FE;&#x961F;&#x5217;
+</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4.1-指针.html" class="navigation navigation-prev " aria-label="Previous page: 4.1 指针">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4.3-多项式.html" class="navigation navigation-next " aria-label="Next page: 4.3 多项式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.2 单向链表","level":"1.6.2","depth":2,"next":{"title":"4.3 多项式","level":"1.6.3","depth":2,"path":"content/IV.链表/4.3-多项式.md","ref":"content/IV.链表/4.3-多项式.md","articles":[]},"previous":{"title":"4.1 指针","level":"1.6.1","depth":2,"path":"content/IV.链表/4.1-指针.md","ref":"content/IV.链表/4.1-指针.md","articles":[]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/favicon@152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/favicon@57.png","appleTouchMore":{"120x120":"/res/favicon@120.png","180x180":"/res/favicon@180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/IV.链表/4.2-单向链表.md","mtime":"2020-07-12T12:31:40.003Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-05T08:54:45.217Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

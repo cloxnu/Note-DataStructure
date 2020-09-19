@@ -9,7 +9,9 @@
         "katex",
         "theme-default",
         "favicon-absolute",
-        "expandable-chapters-small"
+        "expandable-chapters-small",
+        "splitter",
+        "github"
     ],
     "pluginsConfig": {
         "favicon-absolute": {
@@ -21,6 +23,9 @@
                 "120x120": "/res/favicon@120.png",
                 "180x180": "/res/favicon@180.png"
             }
+        },
+        "github": {
+            "url": "https://github.com/cloxnu"
         }
     }
 }

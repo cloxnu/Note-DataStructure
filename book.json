@@ -11,7 +11,8 @@
         "favicon-absolute",
         "expandable-chapters-small",
         "splitter",
-        "github"
+        "github",
+        "disqus"
     ],
     "pluginsConfig": {
         "favicon-absolute": {
@@ -26,6 +27,9 @@
         },
         "github": {
             "url": "https://github.com/cloxnu"
+        },
+        "disqus": {
+            "shortName": "ds-an-dog"
         }
     }
 }

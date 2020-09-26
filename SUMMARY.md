@@ -57,4 +57,7 @@
     * [7.10 利用链表和映射表进行排序 II](content/VII.排序/7.10-利用链表和映射表进行排序II.md)
     * [7.11 内部排序总结](content/VII.排序/7.11-内部排序总结.md)
     * [7.12 外部排序](content/VII.排序/7.12-外部排序.md)
+* [VIII. 散列](content/VIII.散列/README.md)
+    * [8.1 ADT 符号表](content/VIII.散列/8.1-ADT-符号表.md)
+    * [8.2 静态散列](content/VIII.散列/8.2-静态散列.md)
 

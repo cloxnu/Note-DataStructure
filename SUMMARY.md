@@ -60,4 +60,5 @@
 * [VIII. 散列](content/VIII.散列/README.md)
     * [8.1 ADT 符号表](content/VIII.散列/8.1-ADT-符号表.md)
     * [8.2 静态散列](content/VIII.散列/8.2-静态散列.md)
+    * [8.3 溢出处理](content/VIII.散列/8.3-溢出处理.md)
 

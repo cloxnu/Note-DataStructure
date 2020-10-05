@@ -66,6 +66,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="9.2-双端堆.html" />
+    
     
     <link rel="prev" href="./" />
     
@@ -994,6 +996,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.11.2" data-path="9.2-双端堆.html">
+            
+                <a href="9.2-双端堆.html">
+            
+                    
+                    9.2 双端堆
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1064,7 +1079,104 @@
     </p>
 </div>
 
+<ul>
+<li><strong>&#x300E;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x300F;</strong> &#x5047;&#x8BBE;&#x8981;&#x5728;&#x4E0A;&#x56FE;&#x4E2D;&#x63D2;&#x5165;&#x5173;&#x952E;&#x5B57;&#x503C;&#x4E3A; 5 &#x7684;&#x5143;&#x7D20;&#x3002;&#x4E0E;&#x5176;&#x4ED6;&#x5806;&#x4E00;&#x6837;&#xFF0C;&#x6700;&#x5C0F;-&#x6700;&#x5927;&#x5806;&#x4E0A;&#x7684;&#x63D2;&#x5165;&#x7B97;&#x6CD5;&#x6CBF;&#x7740;&#x65B0;&#x63D2;&#x5165;&#x7684;&#x7ED3;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> &#x5230;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x8DEF;&#x5F84;&#x6BD4;&#x8F83;&#x5173;&#x952E;&#x5B57;&#x503C;&#x3002;&#x6BD4;&#x8F83;&#x65B0;&#x7ED3;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> &#x7684;&#x5173;&#x952E;&#x5B57;&#x503C; 5 &#x4E0E;&#x5176;&#x7236;&#x7ED3;&#x70B9;&#x5173;&#x952E;&#x5B57;&#x503C; 10&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x7531;&#x4E8E;&#x5173;&#x952E;&#x5B57;&#x503C;&#x4E3A; 10 &#x7684;&#x7ED3;&#x70B9;&#x4F4D;&#x4E8E;&#x6700;&#x5C0F;&#x5C42;&#xFF0C;&#x4E14; 5 &lt; 10&#xFF0C;&#x6240;&#x4EE5; 5 &#x4E00;&#x5B9A;&#x5C0F;&#x4E8E;&#x4ECE;&#x7ED3;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> &#x5230;&#x6839;&#x7ED3;&#x70B9;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x6700;&#x5927;&#x7ED3;&#x70B9;&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x53EA;&#x9700;&#x68C0;&#x67E5;&#x4ECE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span> &#x5230;&#x6839;&#x7684;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&#x7684;&#x5173;&#x952E;&#x5B57;&#x503C;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x5C06;&#x5173;&#x952E;&#x5B57;&#x503C;&#x4E3A; 10 &#x7684;&#x5143;&#x7D20;&#x79FB;&#x5230;&#x7ED3;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05724em;">j</span></span></span></span>&#x3002;&#x7136;&#x540E;&#xFF0C;&#x628A;&#x5173;&#x952E;&#x5B57;&#x503C;&#x4E3A; 7 &#x7684;&#x5143;&#x7D20;&#x79FB;&#x5230; 10 &#x539F;&#x6765;&#x7684;&#x4F4D;&#x7F6E;&#xFF1B;&#x6700;&#x540E;&#xFF0C;&#x5C06;&#x5173;&#x952E;&#x5B57;&#x503C;&#x4E3A; 5 &#x7684;&#x65B0;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#x3002;&#x63D2;&#x5165;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x56FE;&#x3002;</li>
+</ul>
+<p><img src="res/9-2.svg" alt="9-2"></p>
+<p><img src="res/9-3.svg" alt="9-3"></p>
+<p>&#x51FD;&#x6570; <code>min_max_insert</code> &#x5B9E;&#x73B0;&#x4E86;&#x6700;&#x5C0F;-&#x6700;&#x5927;&#x5806;&#x7684;&#x63D2;&#x5165;&#x8FC7;&#x7A0B;&#xFF0C;&#x5176;&#x4E2D;&#x7528;&#x5230;&#x4E86;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;<code>verify_max</code>, <code>verify_min</code>, <code>level</code>&#x3002;&#x51FD;&#x6570; <code>level</code> &#x786E;&#x5B9A;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x662F;&#x4F4D;&#x4E8E;&#x6700;&#x5C0F;&#x5C42;&#x8FD8;&#x662F;&#x6700;&#x5927;&#x5C42;&#xFF1B;&#x5982;&#x679C;&#x4F4D;&#x4E8E;&#x6700;&#x5C0F;&#x5C42;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; <code>false</code>&#xFF0C;&#x800C;&#x4F4D;&#x4E8E;&#x6700;&#x5927;&#x5C42;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; <code>true</code>&#x3002;&#x51FD;&#x6570; <code>verify_max</code> &#x4ECE;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x7ED3;&#x70B9;&#x5F00;&#x59CB;&#xFF0C;&#x6CBF;&#x7740;&#x4ECE; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.65952em;"></span><span class="strut bottom" style="height:0.65952em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit">i</span></span></span></span> &#x5230;&#x6839;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4F9D;&#x6B21;&#x68C0;&#x67E5;&#x6700;&#x5927;&#x7ED3;&#x70B9;&#xFF0C;&#x67E5;&#x627E;&#x63D2;&#x5165;&#x5143;&#x7D20; <code>item</code> &#x7684;&#x6B63;&#x786E;&#x7ED3;&#x70B9;&#x3002;&#x51FD;&#x6570; <code>verify_min</code> &#x4E0E; <code>verify_max</code> &#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F; <code>verify_min</code> &#x662F;&#x67E5;&#x627E;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&#x3002;&#x51FD;&#x6570; <code>min_max_insert</code> &#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>log</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>&#x3002;</p>
+<pre><code class="lang-c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">min_max_insert</span><span class="hljs-params">(element heap[], <span class="hljs-keyword">int</span> *n, element item)</span>
+</span>{
+    <span class="hljs-keyword">int</span> parent;
+    (*n) ++;
+    <span class="hljs-keyword">if</span> (*n == MAX_SIZE) {
+        <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">&quot;The heap is full\n&quot;</span>);
+        <span class="hljs-built_in">exit</span>(<span class="hljs-number">1</span>);
+    }
+    parent = (*n) / <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">if</span> (!parent)
+        heap[<span class="hljs-number">1</span>] = item;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">switch</span> (level(parent)) {
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">false</span>: <span class="hljs-comment">// min level</span>
+            <span class="hljs-keyword">if</span> (item.key &lt; heap[parent].key) {
+                heap[*n] = heap[parent];
+                verify_min(heap, parent, item);
+            }
+            <span class="hljs-keyword">else</span>
+                verify_max(heap, *n, item);
+            <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-literal">true</span>: <span class="hljs-comment">// max level</span>
+            <span class="hljs-keyword">if</span> (item.key &gt; heap[parent].key) {
+                heap[*n] = heap[parent];
+                verify_max(heap, parent, item);
+            }
+            <span class="hljs-keyword">else</span>
+                verify_min(heap, *n, item);
+    }
+}
 
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">verify_max</span><span class="hljs-params">(element heap[], <span class="hljs-keyword">int</span> i, element item)</span>
+</span>{
+    <span class="hljs-keyword">int</span> grandparent = i/<span class="hljs-number">4</span>;
+    <span class="hljs-keyword">while</span> (grandparent)
+        <span class="hljs-keyword">if</span> (item.key &gt; heap[grandparent].key) {
+            heap[i] = heap[grandparent];
+            i = grandparent;
+            grandparent /= <span class="hljs-number">4</span>;
+        }
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">break</span>;
+    heap[i] = item;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">level</span><span class="hljs-params">(element item)</span>
+</span>{
+    <span class="hljs-keyword">return</span> !((<span class="hljs-built_in">log</span>(item.key) / <span class="hljs-built_in">log</span>(<span class="hljs-number">2</span>)) % <span class="hljs-number">2</span>);
+}
+</code></pre>
+<ul>
+<li><p><strong>&#x300E;&#x5220;&#x9664;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#x300F;</strong> &#x6574;&#x4E2A;&#x5806;&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x7ED3;&#x70B9;&#x5C31;&#x5728;&#x6839;&#x7ED3;&#x70B9;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x5148;&#x5220;&#x9664;&#x6839;&#x7ED3;&#x70B9;&#x3002;&#x518D;&#x5C06;&#x4E0B;&#x6807;&#x6700;&#x5927;&#x7684;&#x7ED3;&#x70B9; <code>item</code> &#x5220;&#x9664;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;&#x7B2C;&#x4E00;&#x5F20;&#x56FE;&#x4E2D;&#x5173;&#x952E;&#x5B57;&#x503C;&#x4E3A; 12 &#x7684;&#x7ED3;&#x70B9;&#xFF09;&#xFF0C;&#x5E76;&#x5C06;&#x8FD9;&#x4E2A;&#x7ED3;&#x70B9; <code>item</code> &#x91CD;&#x65B0;&#x63D2;&#x5165;&#x5230;&#x8FD9;&#x4E2A;&#x6839;&#x7ED3;&#x70B9;&#x4E3A;&#x7A7A;&#x7684;&#x5806;&#x4E2D;&#xFF0C;&#x5C06;&#x8FD9;&#x4E2A;&#x63D2;&#x5165;&#x8FC7;&#x7A0B;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B;&#x96C6;&#x4E2D;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ol>
+<li>&#x6839;&#x7ED3;&#x70B9;&#x6CA1;&#x6709;&#x513F;&#x5B50;&#x7ED3;&#x70B9;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06; <code>item</code> &#x76F4;&#x63A5;&#x63D2;&#x5165;&#x6839;&#x7ED3;&#x70B9;&#x4E2D;&#x3002;</li>
+<li>&#x6839;&#x7ED3;&#x70B9;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x513F;&#x5B50;&#x7ED3;&#x70B9;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x6700;&#x5C0F;-&#x6700;&#x5927;&#x5806;&#x4E2D;&#x5173;&#x952E;&#x5B57;&#x503C;&#x6700;&#x5C0F;&#x7684;&#x7ED3;&#x70B9;&#x4E00;&#x5B9A;&#x51FA;&#x73B0;&#x5728;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x513F;&#x5B50;&#x7ED3;&#x70B9;&#x6216;&#x540E;&#x4EE3;&#x7ED3;&#x70B9;&#x4E2D;&#x3002;&#x4E3A;&#x4E86;&#x786E;&#x5B9A;&#x5176;&#x4E2D;&#x7684;&#x5177;&#x6709;&#x6700;&#x5C0F;&#x5173;&#x952E;&#x5B57;&#x503C;&#x7684;&#x7ED3;&#x70B9;&#xFF0C;&#x8BBE;&#x5177;&#x6709;&#x6700;&#x5C0F;&#x5173;&#x952E;&#x5B57;&#x503C;&#x7ED3;&#x70B9;&#x7684;&#x4E0B;&#x6807;&#x4E3A; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span>&#xFF0C;&#x5219;&#x9700;&#x8981;&#x8003;&#x8651;&#x4E0B;&#x5217;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;<ol>
+<li><code>item.key &lt;= heap[k].key</code>&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x7531;&#x4E8E; <code>heap</code> &#x4E2D;&#x6CA1;&#x6709;&#x5173;&#x952E;&#x5B57;&#x503C;&#x6BD4; <code>item.key</code> &#x66F4;&#x5C0F;&#x7684;&#x7ED3;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;<code>item</code> &#x76F4;&#x63A5;&#x63D2;&#x5165;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#x3002;</li>
+<li><code>item.key &gt; heap[k].key</code> &#x4E14; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x662F;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x513F;&#x5B50;&#x7ED3;&#x70B9;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x7531;&#x4E8E; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x662F;&#x6700;&#x5927;&#x7ED3;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x540E;&#x4EE3;&#x7ED3;&#x70B9;&#x4E2D;&#x4E0D;&#x53EF;&#x80FD;&#x6709;&#x5173;&#x952E;&#x5B57;&#x503C;&#x5927;&#x4E8E; <code>heap[k].key</code> &#x7684;&#x7ED3;&#x70B9;&#x3002;&#x4ECE;&#x800C;&#x4E5F;&#x5C31;&#x6CA1;&#x6709;&#x5173;&#x952E;&#x5B57;&#x503C;&#x5927;&#x4E8E; <code>item.key</code> &#x7684;&#x7ED3;&#x70B9;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x628A;&#x5143;&#x7D20; <code>heap[k]</code> &#x79FB;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x5C06; <code>item</code> &#x63D2;&#x5165; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x7ED3;&#x70B9;&#x3002;</li>
+<li><code>item.key &gt; heap[k].key</code> &#x4E14; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x662F;&#x6839;&#x7ED3;&#x70B9;&#x7684;&#x540E;&#x4EE3;&#x7ED3;&#x70B9;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5148;&#x628A;&#x5143;&#x7D20; <code>heap[k]</code> &#x79FB;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;&#x5E76;&#x5C06; <code>item</code> &#x63D2;&#x5165;&#x7ED3;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span>&#x3002;&#x7136;&#x540E;&#x8003;&#x5BDF;&#x7ED3;&#x70B9; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x7684;&#x7236;&#x7ED3;&#x70B9; <code>parent</code>&#xFF1A;&#x5982;&#x679C; <code>item.key &gt; heap[parent].key</code>&#xFF0C;&#x5219;&#x5C06; <code>heap[parent]</code> &#x4E0E;&#x5143;&#x7D20; <code>item</code> &#x4E92;&#x6362;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4FDD;&#x8BC1;&#x4E86;&#x6700;&#x5927;&#x7ED3;&#x70B9; <code>parent</code> &#x7684;&#x5173;&#x952E;&#x5B57;&#x503C;&#x5728;&#x4EE5; <code>parent</code> &#x4E3A;&#x6839;&#x7684;&#x5B50;&#x5806;&#x4E2D;&#x662F;&#x6700;&#x5927;&#x7684;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x95EE;&#x9898;&#x8F6C;&#x5316;&#x4E3A;&#x5C06; <code>item</code> &#x63D2;&#x5165;&#x5230;&#x4EE5; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03148em;">k</span></span></span></span> &#x4E3A;&#x6839;&#x7684;&#x5B50;&#x5806;&#x4E2D;&#xFF0C;&#x800C;&#x4E14;&#x8FD9;&#x4E2A;&#x5B50;&#x5806;&#x7684;&#x6839;&#x7ED3;&#x70B9; <code>h[k]</code> &#x5DF2;&#x817E;&#x7A7A;&#x3002;&#x8FD9;&#x4E0E;&#x521D;&#x59CB;&#x65F6;&#x5C06; <code>item</code> &#x63D2;&#x5165;&#x5230;&#x6839;&#x7ED3;&#x70B9;&#x4E3A;&#x7A7A;&#x7684;&#x6700;&#x5C0F;-&#x6700;&#x5927;&#x5806;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x4E0A;&#x8FF0;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#x3002;</li>
+</ol>
+</li>
+</ol>
+<p>&#x51FD;&#x6570; <code>delete_min</code> &#x5B9E;&#x73B0;&#x4E86;&#x5220;&#x9664;&#x6700;&#x5C0F;&#x5143;&#x7D20;&#xFF0C;&#x5B83;&#x8C03;&#x7528;&#x4E86;&#x51FD;&#x6570; <code>min_child_grandchild(i)</code>&#xFF0C;&#x7528;&#x4EE5;&#x786E;&#x5B9A; <code>i</code> &#x7ED3;&#x70B9;&#x7684;&#x6240;&#x6709;&#x513F;&#x5B50;&#x548C;&#x540E;&#x4EE3;&#x7ED3;&#x70B9;&#x4E2D;&#x5173;&#x952E;&#x5B57;&#x503C;&#x6700;&#x5C0F;&#x7684;&#x7ED3;&#x70B9;&#x3002;&#x5982;&#x679C; <code>i</code> &#x7684;&#x513F;&#x5B50;&#x7ED3;&#x70B9;&#x548C;&#x540E;&#x4EE3;&#x7ED3;&#x70B9;&#x7684;&#x6700;&#x5C0F;&#x7ED3;&#x70B9;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x513F;&#x5B50;&#x7ED3;&#x70B9;&#x7684;&#x5730;&#x5740;&#x3002;&#x7A0B;&#x5E8F;&#x6BB5;&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x51FD;&#x6570; <code>min_child_grandchild</code>&#x3002;&#x51FD;&#x6570; <code>delete_min</code> &#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F; <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>log</mi><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span>&#x3002;</p>
+</li>
+</ul>
+<pre><code class="lang-c++"><span class="hljs-function">element <span class="hljs-title">delete_min</span><span class="hljs-params">(element heap[], <span class="hljs-keyword">int</span> *n)</span>
+</span>{
+    <span class="hljs-keyword">int</span> i, last, k, parent;
+    element temp, x;
+
+    <span class="hljs-keyword">if</span> (!(*n)) {
+        <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">&quot;The heap is empty\n&quot;</span>);
+        heap[<span class="hljs-number">0</span>].key = INT_MAX;
+        <span class="hljs-keyword">return</span> heap[<span class="hljs-number">0</span>];
+    }
+    heap[<span class="hljs-number">0</span>] = heap[<span class="hljs-number">1</span>];
+    x = heap[(*n)--];
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>, last = (*n) / <span class="hljs-number">2</span>; i &lt;= last;) {
+        k = min_child_grandchild(i, *n);
+        <span class="hljs-keyword">if</span> (x.key &lt;= heap[k].key) <span class="hljs-keyword">break</span>;
+        heap[i] = heap[k];
+        <span class="hljs-keyword">if</span> (k &lt;= <span class="hljs-number">2</span>*i+<span class="hljs-number">1</span>) {
+            i = k;
+            <span class="hljs-keyword">break</span>;
+        }
+        parent = k/<span class="hljs-number">2</span>;
+        <span class="hljs-keyword">if</span> (x.key &gt; heap[parent].key)
+            SWAP(heap[parent], x, temp);
+        i = k;
+    }
+    heap[i] = x;
+    <span class="hljs-keyword">return</span> heap[<span class="hljs-number">0</span>];
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1092,10 +1204,14 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: IX. 堆结构">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: IX. 堆结构">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="9.2-双端堆.html" class="navigation navigation-next " aria-label="Next page: 9.2 双端堆">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1104,7 +1220,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"9.1 最小-最大堆","level":"1.11.1","depth":2,"previous":{"title":"IX. 堆结构","level":"1.11","depth":1,"path":"content/IX.堆结构/README.md","ref":"content/IX.堆结构/README.md","articles":[{"title":"9.1 最小-最大堆","level":"1.11.1","depth":2,"path":"content/IX.堆结构/9.1-最小-最大堆.md","ref":"content/IX.堆结构/9.1-最小-最大堆.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","splitter","github","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"ds-an-dog"},"github":{"url":"https://github.com/cloxnu"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/favicon@152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/favicon@57.png","appleTouchMore":{"120x120":"/res/favicon@120.png","180x180":"/res/favicon@180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/IX.堆结构/9.1-最小-最大堆.md","mtime":"2020-10-04T17:28:18.956Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-04T17:28:25.438Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"9.1 最小-最大堆","level":"1.11.1","depth":2,"next":{"title":"9.2 双端堆","level":"1.11.2","depth":2,"path":"content/IX.堆结构/9.2-双端堆.md","ref":"content/IX.堆结构/9.2-双端堆.md","articles":[]},"previous":{"title":"IX. 堆结构","level":"1.11","depth":1,"path":"content/IX.堆结构/README.md","ref":"content/IX.堆结构/README.md","articles":[{"title":"9.1 最小-最大堆","level":"1.11.1","depth":2,"path":"content/IX.堆结构/9.1-最小-最大堆.md","ref":"content/IX.堆结构/9.1-最小-最大堆.md","articles":[]},{"title":"9.2 双端堆","level":"1.11.2","depth":2,"path":"content/IX.堆结构/9.2-双端堆.md","ref":"content/IX.堆结构/9.2-双端堆.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["katex","theme-default","favicon-absolute","expandable-chapters-small","splitter","github","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"ds-an-dog"},"github":{"url":"https://github.com/cloxnu"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/res/favicon@152.png","appleTouchIconPrecomposedMore":{},"favicon":"/res/favicon.ico","bookmark":"/res/favicon.ico","appleTouch":"/res/favicon@57.png","appleTouchMore":{"120x120":"/res/favicon@120.png","180x180":"/res/favicon@180.png"}},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"cloxnu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"数据结构","gitbook":"*","description":"Note about data structure, powered by GitBook. https://ds.an.dog"},"file":{"path":"content/IX.堆结构/9.1-最小-最大堆.md","mtime":"2020-10-05T15:07:52.860Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-05T15:23:37.081Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

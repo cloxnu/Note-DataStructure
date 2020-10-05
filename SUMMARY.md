@@ -64,4 +64,5 @@
     * [8.4 动态散列](content/VIII.散列/8.4-动态散列.md)
 * [IX. 堆结构](content/IX.堆结构/README.md)
     * [9.1 最小-最大堆](content/IX.堆结构/9.1-最小-最大堆.md)
+    * [9.2 双端堆](content/IX.堆结构/9.2-双端堆.md)
 

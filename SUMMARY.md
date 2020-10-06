@@ -65,4 +65,6 @@
 * [IX. 堆结构](content/IX.堆结构/README.md)
     * [9.1 最小-最大堆](content/IX.堆结构/9.1-最小-最大堆.md)
     * [9.2 双端堆](content/IX.堆结构/9.2-双端堆.md)
+    * [9.3 左高树](content/IX.堆结构/9.3-左高树.md)
+    * [9.4 二项堆](content/IX.堆结构/9.4-二项堆.md)
 
